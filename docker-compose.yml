@@ -1,0 +1,10 @@
+services:
+  finovia:
+    build: .
+    image: finovia-web:latest
+    container_name: finovia-web
+    restart: unless-stopped
+    # Host 5174 -> konteyner 80.
+    # Faqat localhost'ga bog'laymiz, chunki tashqi trafik host nginx (reverse proxy) orqali keladi.
+    ports:
+      - "127.0.0.1:5174:80"
