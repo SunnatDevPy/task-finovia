@@ -32,6 +32,12 @@ export const BLOG_IMAGES = [
 
 export const TESTIMONIAL_NAMES = ['Benjamin', 'Komal R.', 'Amaz M.']
 
+export const TESTIMONIAL_AVATARS = [
+  'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80',
+  'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80',
+  'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80',
+]
+
 export const ABOUT_IMAGE =
   'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80'
 

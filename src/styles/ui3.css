@@ -1,0 +1,95 @@
+/* UI 3 — Analytics / dark dashboard skin */
+.ui-3 {
+  --bg: #0c0d0a;
+  --bg-soft: #0e0f14;
+  --surface: #15161f;
+  --surface-2: #1a1c28;
+  --line: rgba(255, 255, 255, 0.08);
+  --accent: #c6f432;
+  --accent-soft: rgba(198, 244, 50, 0.12);
+  --text: #f4f5ef;
+  --muted: #9b9d92;
+  --radius: 18px;
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+.ui-3 .header.is-scrolled {
+  background: rgba(12, 13, 10, 0.88);
+}
+
+.ui-3 .btn-primary {
+  background: var(--accent);
+  color: #11130b;
+}
+
+.ui-3 .btn-primary:hover {
+  background: #d4ff4d;
+}
+
+.ui-3 .hero {
+  padding: 180px 0 80px;
+  text-align: center;
+}
+
+.ui-3 .hero__inner {
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+}
+
+.ui-3 .hero__title span {
+  color: var(--accent);
+}
+
+.ui-3 .hero__actions,
+.ui-3 .hero__stats {
+  justify-content: center;
+}
+
+.ui-3 .marquee {
+  background: var(--accent);
+  border-color: transparent;
+}
+
+.ui-3 .marquee__item {
+  color: #11130b;
+}
+
+.ui-3 .marquee__dot {
+  color: #11130b;
+  opacity: 0.45;
+}
+
+.ui-3 .section:not(.dashboard) {
+  background: transparent;
+}
+
+.ui-3 .service-card,
+.ui-3 .why-card,
+.ui-3 .process-card,
+.ui-3 .price-card,
+.ui-3 .stat {
+  background: var(--surface);
+  border-color: var(--line);
+}
+
+.ui-3 .dashboard {
+  background: linear-gradient(180deg, #0e0f14 0%, #0c0d0a 100%);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.ui-3 .dashboard .section-title {
+  text-transform: uppercase;
+}
+
+.ui-3 .dashboard__pulse {
+  border-color: rgba(198, 244, 50, 0.3);
+  color: var(--accent);
+}
+
+.ui-3 .footer {
+  background: var(--bg-soft);
+}

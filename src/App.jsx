@@ -11,12 +11,15 @@ import Pricing from './components/Pricing.jsx'
 import Blog from './components/Blog.jsx'
 import Testimonials from './components/Testimonials.jsx'
 import Footer from './components/Footer.jsx'
+import Dashboard from './components/Dashboard.jsx'
 import Marquee from './components/Marquee.jsx'
 import useReveal from './hooks/useReveal.js'
 import { LanguageProvider } from './i18n/LanguageContext.jsx'
 import { UIVariantProvider, useUIVariant } from './context/UIVariantContext.jsx'
 import './styles/app.css'
 import './styles/ui2.css'
+import './styles/ui3.css'
+import './styles/dashboard.css'
 
 function Site() {
   const { variant } = useUIVariant()
@@ -34,6 +37,7 @@ function Site() {
         <Work />
         <Team />
         <CTA />
+        {(variant === '2' || variant === '3') && <Dashboard />}
         <Process />
         <Pricing />
         <Blog />

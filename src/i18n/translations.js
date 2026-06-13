@@ -108,14 +108,35 @@ export const translations = {
     testimonials: {
       eyebrow: 'Mijozlar fikri',
       title: 'Mijozlarimiz nima deydi.',
+      explore: 'Batafsil ko‘rish',
       items: [
         { text: 'Finovia SEO’mizni yangi bosqichga olib chiqdi, ko‘proq trafik va brend ko‘rinishini oshirdi. Ijtimoiy tarmoq strategiyalari faolligimizni sezilarli oshirdi. Natijalardan juda mamnunmiz!', role: 'Marketing direktori' },
         { text: 'Finovia bilan ishlash e-commerce strategiyamizni butunlay o‘zgartirdi. PPC kampaniyalari ko‘proq sifatli mijozlar keltirdi, kontent strategiyasi sotuvni 50% oshirdi.', role: 'Bosh direktor, ShopSmart' },
         { text: 'Finovia saytimizni qayta loyihalashtirishga, SEO uchun optimallashtirishga va to‘liq kontent reja ishlab chiqishga yordam berdi. Sayt unumdorligi keskin oshdi.', role: 'Asoschi, Greenly' },
       ],
     },
+    dashboard: {
+      eyebrow: 'Analitika',
+      title: 'Real vaqtli marketing ko‘rsatkichlari.',
+      subtitle: 'Har safar yangilanganda yangi demo ma’lumotlar — kampaniya dinamikasini kuzating.',
+      kpis: {
+        traffic: 'Trafik',
+        conversion: 'Konversiya',
+        revenue: 'Daromad',
+        roi: 'ROI',
+      },
+      charts: {
+        weekly: 'Haftalik trafik',
+        growth: 'O‘sish dinamikasi',
+        sources: 'Manbalar',
+        score: 'Kampaniya balli',
+        live: 'Jonli faollik',
+      },
+      donut: { seo: 'SEO', ppc: 'PPC', social: 'Ijtimoiy', email: 'Email' },
+      activity: { seo: 'SEO yangilandi', ppc: 'PPC kampaniya', social: 'Ijtimoiy post', content: 'Kontent nashr' },
+      vsLast: 'o‘tgan haftaga nisbatan',
+    },
     footer: {
-      brand: 'O‘lchanadigan natijalar keltiradigan keng qamrovli raqamli marketing yechimlari.',
       menuTitle: 'Menyu',
       menu: ['Biz haqimizda', 'Xizmatlar', 'Portfolio', 'Blog', 'Mijozlar fikri'],
       supportTitle: 'Yordam',
@@ -229,11 +250,33 @@ export const translations = {
     testimonials: {
       eyebrow: 'Отзывы',
       title: 'Что говорят наши клиенты.',
+      explore: 'Подробнее',
       items: [
         { text: 'Finovia вывела наше SEO на новый уровень, увеличив трафик и узнаваемость бренда. Их стратегии в соцсетях значительно повысили вовлечённость. Мы в восторге от результатов!', role: 'Директор по маркетингу' },
         { text: 'Работа с Finovia полностью изменила нашу e-commerce стратегию. PPC-кампании привели больше качественных лидов, а контент увеличил продажи на 50%.', role: 'CEO, ShopSmart' },
         { text: 'Finovia помогла перепроектировать сайт, оптимизировать SEO и разработать контент-план. Производительность сайта взлетела.', role: 'Основатель, Greenly' },
       ],
+    },
+    dashboard: {
+      eyebrow: 'Аналитика',
+      title: 'Маркетинговые показатели в реальном времени.',
+      subtitle: 'Новые демо-данные при каждой перезагрузке — следите за динамикой кампаний.',
+      kpis: {
+        traffic: 'Трафик',
+        conversion: 'Конверсия',
+        revenue: 'Доход',
+        roi: 'ROI',
+      },
+      charts: {
+        weekly: 'Недельный трафик',
+        growth: 'Динамика роста',
+        sources: 'Источники',
+        score: 'Оценка кампании',
+        live: 'Активность',
+      },
+      donut: { seo: 'SEO', ppc: 'PPC', social: 'Соцсети', email: 'Email' },
+      activity: { seo: 'SEO обновлён', ppc: 'PPC кампания', social: 'Пост в соцсетях', content: 'Публикация контента' },
+      vsLast: 'к прошлой неделе',
     },
     footer: {
       brand: 'Комплексные решения digital-маркетинга, которые приносят измеримые результаты.',
@@ -350,11 +393,33 @@ export const translations = {
     testimonials: {
       eyebrow: 'Testimonials',
       title: 'What Our Clients Are Saying.',
+      explore: 'Explore more',
       items: [
         { text: "Finovia took our SEO to the next level, driving more traffic and increasing our brand visibility. Their social media strategies have boosted our engagement significantly. We couldn't be happier with the results!", role: 'Marketing Director' },
         { text: 'Working with Finovia completely transformed our e-commerce strategy. Their PPC campaigns brought in more qualified leads, and their content strategy increased our sales by 50%. They truly care about our success.', role: 'CEO, ShopSmart' },
         { text: "Finovia helped us redesign our website, optimize it for SEO, and develop a comprehensive content marketing plan. Our website's performance has skyrocketed, and our brand visibility is stronger than ever.", role: 'Founder, Greenly' },
       ],
+    },
+    dashboard: {
+      eyebrow: 'Analytics',
+      title: 'Real-Time Marketing Metrics.',
+      subtitle: 'Fresh demo data on every reload — track campaign momentum live.',
+      kpis: {
+        traffic: 'Traffic',
+        conversion: 'Conversion',
+        revenue: 'Revenue',
+        roi: 'ROI',
+      },
+      charts: {
+        weekly: 'Weekly Traffic',
+        growth: 'Growth Trend',
+        sources: 'Traffic Sources',
+        score: 'Campaign Score',
+        live: 'Live Activity',
+      },
+      donut: { seo: 'SEO', ppc: 'PPC', social: 'Social', email: 'Email' },
+      activity: { seo: 'SEO updated', ppc: 'PPC campaign', social: 'Social post', content: 'Content published' },
+      vsLast: 'vs last week',
     },
     footer: {
       brand: 'Comprehensive digital marketing solutions that drive measurable results.',

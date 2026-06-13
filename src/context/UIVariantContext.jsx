@@ -8,7 +8,7 @@ export function UIVariantProvider({ children }) {
   const [variant, setVariant] = useState(() => {
     if (typeof localStorage !== 'undefined') {
       const saved = localStorage.getItem(STORAGE_KEY)
-      if (saved === '1' || saved === '2') return saved
+      if (saved === '1' || saved === '2' || saved === '3') return saved
     }
     return '1'
   })

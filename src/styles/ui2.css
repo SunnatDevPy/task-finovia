@@ -15,6 +15,8 @@
   --text: #15151f;
   --muted: #6a6a78;
   --radius: 18px;
+  --card-dark: #14141c;
+  --orange: #ff6b2c;
 
   background: var(--bg);
   color: var(--text);
@@ -294,26 +296,221 @@
   color: var(--accent);
 }
 
-/* ---- Testimonials: oq karta ---- */
-.ui-2 .testimonials__slider {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  padding: 56px 48px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 24px 60px -40px rgba(20, 22, 40, 0.5);
+/* ---- Blog & Testimonials: Finovia reference (qora kartalar) ---- */
+.ui-2 .blog,
+.ui-2 .testimonials {
+  background: var(--bg-soft);
 }
 
-.ui-2 .testimonials__slider::before {
-  content: '\201C';
-  position: absolute;
-  top: -10px;
-  left: 30px;
-  font-family: var(--font-display);
-  font-size: 9rem;
-  color: var(--accent-soft);
+.ui-2 .blog .work__head,
+.ui-2 .testimonials .work__head {
+  align-items: flex-end;
+  margin-bottom: 50px;
+}
+
+.ui-2 .blog .section-title,
+.ui-2 .testimonials .section-title {
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  max-width: 18ch;
+}
+
+.ui-2 .blog .eyebrow,
+.ui-2 .testimonials .eyebrow {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.ui-2 .eyebrow__hash {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.85rem;
   line-height: 1;
+}
+
+.ui-2 .blog-card {
+  background: var(--card-dark);
+  border-radius: 22px;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 24px 50px -34px rgba(20, 22, 40, 0.55);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.ui-2 .blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 32px 60px -28px rgba(108, 77, 255, 0.35);
+}
+
+.ui-2 .blog-card__img {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.ui-2 .blog-card__img img {
+  height: 220px;
+}
+
+.ui-2 .blog-card__body {
+  padding: 22px 24px 28px;
+}
+
+.ui-2 .blog-card__tag {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 0;
+  margin-bottom: 14px;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.ui-2 .blog-card__tag-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.ui-2 .blog-card h3 {
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.35;
+  margin-bottom: 18px;
+}
+
+.ui-2 .blog-card__link {
+  color: var(--orange);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: opacity 0.25s ease;
+}
+
+.ui-2 .blog-card__link:hover {
+  opacity: 0.8;
+}
+
+/* Testimonials grid */
+.ui-2 .testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.ui-2 .testimonial-card {
+  position: relative;
+  background: var(--card-dark);
+  border-radius: 22px;
+  padding: 32px 32px 28px;
+  overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.ui-2 .testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 56px -30px rgba(108, 77, 255, 0.35);
+}
+
+.ui-2 .testimonial-card__stars {
+  color: var(--orange);
+  font-size: 0.95rem;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.ui-2 .testimonial-card__text {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+.ui-2 .testimonial-card__footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.ui-2 .testimonial-card__footer img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.ui-2 .testimonial-card__footer strong {
+  display: block;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.ui-2 .testimonial-card__footer span {
+  color: var(--orange);
+  font-size: 0.85rem;
+}
+
+.ui-2 .testimonial-card__quote {
+  position: absolute;
+  right: 24px;
+  bottom: 16px;
+  font-family: var(--font-display);
+  font-size: 5.5rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+/* 3-chi testimonial to'liq kenglik (reference 2 ustun) */
+.ui-2 .testimonial-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  max-width: calc(50% - 12px);
+}
+
+@media (max-width: 768px) {
+  .ui-2 .testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+  .ui-2 .testimonial-card:last-child:nth-child(odd) {
+    max-width: none;
+  }
+  .ui-2 .blog .section-title,
+  .ui-2 .testimonials .section-title {
+    max-width: none;
+  }
 }
 
 /* ---- Footer: light ---- */

@@ -39,6 +39,12 @@ export default function Header() {
             >
               UI 2
             </button>
+            <button
+              className={`ui-switch__btn ${variant === '3' ? 'is-active' : ''}`}
+              onClick={() => setVariant('3')}
+            >
+              UI 3
+            </button>
           </div>
         </div>
 
