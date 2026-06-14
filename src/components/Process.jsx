@@ -14,7 +14,7 @@ export default function Process() {
 
         <div className="process__grid">
           {t.process.items.map((step, i) => (
-            <article className="process-card" key={i} {...rv(dirs[i], i * 0.12)}>
+            <article className="process-card card-glow" key={i} {...rv(dirs[i], i * 0.12)}>
               <span className="process-card__num">{String(i + 1).padStart(2, '0')}</span>
               <h3>{step.title}</h3>
               <p>{step.text}</p>

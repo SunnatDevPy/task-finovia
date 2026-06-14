@@ -22,17 +22,19 @@ export default function Hero() {
             {t.hero.viewWork}
           </a>
         </div>
+      </div>
 
-        <div className="hero__stats" {...rv('right', 0.2)}>
+      <div className="container hero__stats-wrap">
+        <div className="hero__stats" {...rv('up', 0.2)}>
           {STATS.map((s, i) => (
-            <div className="stat" key={i} {...rv('up', 0.25 + i * 0.06)}>
+            <div className="stat" key={i}>
               <span className="stat__value">
                 <CountUp end={s.end} prefix={s.prefix} suffix={s.suffix} />
               </span>
               <span className="stat__label">{t.stats.labels[i]}</span>
             </div>
           ))}
-          <div className="stat stat--rating" {...rv('scale', 0.45)}>
+          <div className="stat stat--rating">
             <span className="stat__value">
               <CountUp end={5} decimals={1} suffix=" ★" />
             </span>

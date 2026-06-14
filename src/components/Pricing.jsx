@@ -17,7 +17,7 @@ export default function Pricing() {
             const meta = PRICING_META[i]
             return (
               <article
-                className={`price-card ${meta.featured ? 'is-featured' : ''}`}
+                className={`price-card card-glow ${meta.featured ? 'is-featured' : ''}`}
                 key={i}
                 {...rv(i === 0 ? 'left' : 'right', i * 0.1)}
               >

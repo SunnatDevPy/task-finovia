@@ -10,90 +10,67 @@ export default function Testimonials() {
   const isUi2 = variant === '2'
   const [active, setActive] = useState(0)
   const items = t.testimonials.items
-  const cardDirs = ['left', 'right', 'up']
 
   useEffect(() => {
-    if (isUi2) return
     const id = setInterval(() => {
       setActive((v) => (v + 1) % items.length)
-    }, 6000)
+    }, 5500)
     return () => clearInterval(id)
-  }, [items.length, isUi2])
+  }, [items.length])
 
   return (
-    <section className="section testimonials" id="testimonials">
+    <section className={`section testimonials ${isUi2 ? 'testimonials--ui2' : ''}`} id="testimonials">
       <div className="container">
-        {isUi2 ? (
-          <>
-            <div className="work__head" {...rv('up')}>
-              <div>
-                <span className="eyebrow">
-                  <span className="eyebrow__hash">#</span>
-                  {t.testimonials.eyebrow}
-                </span>
-                <h2 className="section-title">{t.testimonials.title}</h2>
-              </div>
-              <a href="#contact" className="btn btn-primary">
-                {t.testimonials.explore} <span className="arrow">→</span>
-              </a>
-            </div>
+        <div className={isUi2 ? 'work__head' : 'section-head'} {...rv('left')}>
+          <div>
+            <span className="eyebrow">
+              {isUi2 && <span className="eyebrow__hash">#</span>}
+              {t.testimonials.eyebrow}
+            </span>
+            <h2 className="section-title">{t.testimonials.title}</h2>
+          </div>
+          {isUi2 && (
+            <a href="#contact" className="btn btn-primary">
+              {t.testimonials.explore} <span className="arrow">→</span>
+            </a>
+          )}
+        </div>
 
-            <div className="testimonials__grid">
-              {items.map((item, i) => (
-                <article
-                  className="testimonial-card"
-                  key={i}
-                  {...rv(cardDirs[i], i * 0.1)}
-                >
-                  <div className="testimonial-card__stars" aria-label="5 stars">
-                    ★★★★★
+        <div className="testimonials__cards card-glow-wrap" {...rv('right', 0.1)}>
+          <div className="testimonials__track">
+            {items.map((item, i) => (
+              <article
+                className={`testimonial-card card-glow ${i === active ? 'is-active' : ''}`}
+                key={i}
+              >
+                <div className="testimonial-card__stars" aria-label="5 stars">
+                  ★★★★★
+                </div>
+                <p className="testimonial-card__text">"{item.text}"</p>
+                <footer className="testimonial-card__footer">
+                  <img src={TESTIMONIAL_AVATARS[i]} alt={TESTIMONIAL_NAMES[i]} loading="lazy" />
+                  <div>
+                    <strong>{TESTIMONIAL_NAMES[i]}.</strong>
+                    <span>{item.role}.</span>
                   </div>
-                  <p className="testimonial-card__text">"{item.text}"</p>
-                  <footer className="testimonial-card__footer">
-                    <img src={TESTIMONIAL_AVATARS[i]} alt={TESTIMONIAL_NAMES[i]} loading="lazy" />
-                    <div>
-                      <strong>{TESTIMONIAL_NAMES[i]}.</strong>
-                      <span>{item.role}.</span>
-                    </div>
-                  </footer>
-                  <span className="testimonial-card__quote" aria-hidden="true">
-                    "
-                  </span>
-                </article>
-              ))}
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="section-head" {...rv('left')}>
-              <span className="eyebrow">{t.testimonials.eyebrow}</span>
-              <h2 className="section-title">{t.testimonials.title}</h2>
-            </div>
+                </footer>
+                <span className="testimonial-card__quote" aria-hidden="true">"</span>
+              </article>
+            ))}
+          </div>
 
-            <div className="testimonials__slider" {...rv('right', 0.1)}>
-              {items.map((item, i) => (
-                <blockquote className={`testimonial ${i === active ? 'is-active' : ''}`} key={i}>
-                  <p className="testimonial__text">"{item.text}"</p>
-                  <footer>
-                    <strong>{TESTIMONIAL_NAMES[i]}</strong>
-                    <span>{item.role}</span>
-                  </footer>
-                </blockquote>
-              ))}
-
-              <div className="testimonials__dots">
-                {items.map((_, i) => (
-                  <button
-                    key={i}
-                    className={i === active ? 'is-active' : ''}
-                    onClick={() => setActive(i)}
-                    aria-label={`Testimonial ${i + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-          </>
-        )}
+          <div className="testimonials__dots">
+            {items.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                className={i === active ? 'is-active' : ''}
+                onClick={() => setActive(i)}
+                aria-label={`Testimonial ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )

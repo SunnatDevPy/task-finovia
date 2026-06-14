@@ -1,0 +1,197 @@
+/* =====================================================================
+   UI 1 — DARK FINOVIA (original template)
+   https://templates.studioniskala.com/finovia/
+   Qora fon, yashil aksent, chapga tekislangan hero.
+   ===================================================================== */
+
+.ui-1 {
+  --bg: #0c0d0a;
+  --bg-soft: #11120d;
+  --surface: #1a1c12;
+  --surface-2: #20221a;
+  --line: rgba(255, 255, 255, 0.08);
+  --accent: #c6f432;
+  --accent-soft: rgba(198, 244, 50, 0.14);
+  --text: #f4f5ef;
+  --muted: #9b9d92;
+  --radius: 22px;
+}
+
+/* Hero — chapga (Finovia asl uslubi) */
+.ui-1 .hero__inner {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ui-1 .hero__title {
+  margin: 0;
+  max-width: 14ch;
+}
+
+.ui-1 .hero__lead {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.ui-1 .hero__actions {
+  justify-content: flex-start;
+}
+
+.ui-1 .hero__glow {
+  left: -80px;
+  transform: none;
+}
+
+.ui-1 .eyebrow::before {
+  display: block;
+}
+
+.ui-1 .hero__stats {
+  margin-top: 0;
+}
+
+.ui-1 .stat {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== UI 1 — UNIKAL ANIMATSIYA: tez, qat'iy sirpanish ===== */
+.ui-1 .reveal {
+  transition:
+    opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-1 .reveal-up,
+.ui-1 .reveal-down {
+  transform: translateY(60px);
+}
+
+.ui-1 .reveal-left {
+  transform: translateX(-70px);
+}
+
+.ui-1 .reveal-right {
+  transform: translateX(70px);
+}
+
+.ui-1 .reveal-scale {
+  transform: translateY(40px) scale(0.96);
+}
+
+.ui-1 .services,
+.ui-1 .why,
+.ui-1 .team,
+.ui-1 .process,
+.ui-1 .testimonials {
+  background: var(--bg-soft);
+}
+
+.ui-1 .about,
+.ui-1 .work,
+.ui-1 .pricing,
+.ui-1 .blog {
+  background: transparent;
+}
+
+/* ===== UI 1 — UNIKAL HOVER: pastdan o'sadigan yashil chiziq ===== */
+.ui-1 .service-card,
+.ui-1 .why-card,
+.ui-1 .process-card,
+.ui-1 .blog-card,
+.ui-1 .price-card {
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.ui-1 .service-card::after,
+.ui-1 .why-card::after,
+.ui-1 .process-card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-1 .service-card:hover::after,
+.ui-1 .why-card:hover::after,
+.ui-1 .process-card:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.ui-1 .service-card:hover,
+.ui-1 .why-card:hover,
+.ui-1 .process-card:hover,
+.ui-1 .blog-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(198, 244, 50, 0.45);
+  box-shadow: 0 28px 60px -34px rgba(198, 244, 50, 0.28);
+}
+
+.ui-1 .work-card:hover .work-card__img img {
+  border-color: rgba(198, 244, 50, 0.35);
+  box-shadow: 0 24px 56px -32px rgba(198, 244, 50, 0.2);
+}
+
+.ui-1 .stat:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 0 30px -8px rgba(198, 244, 50, 0.3);
+}
+
+/* Footer — qora Finovia uslubi */
+.ui-1 .footer__top {
+  background: #0a0b08;
+}
+
+.ui-1 .footer__bottom {
+  background: #060705;
+}
+
+.ui-1 .footer__col h4 {
+  color: var(--text);
+  text-transform: uppercase;
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+}
+
+.ui-1 .author-credit {
+  background: rgba(26, 28, 18, 0.95);
+  border-color: rgba(198, 244, 50, 0.25);
+}
+
+.ui-1 .author-credit:hover {
+  box-shadow: 0 22px 50px -18px rgba(198, 244, 50, 0.35);
+}
+
+/* ===== UI 1 rasm ishlovi: oq-qora -> rang (hoverda) ===== */
+.ui-1 .work-card__img img {
+  filter: grayscale(0.6) contrast(1.05);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.ui-1 .work-card:hover .work-card__img img {
+  filter: grayscale(0) contrast(1);
+}
+
+@media (max-width: 768px) {
+  .ui-1 .hero__inner {
+    align-items: center;
+    text-align: center;
+  }
+  .ui-1 .hero__actions {
+    justify-content: center;
+  }
+  .ui-1 .hero__lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
