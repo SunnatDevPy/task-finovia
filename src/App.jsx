@@ -11,10 +11,11 @@ import Pricing from './components/Pricing.jsx'
 import Blog from './components/Blog.jsx'
 import Testimonials from './components/Testimonials.jsx'
 import Footer from './components/Footer.jsx'
+import AuthorCredit from './components/AuthorCredit.jsx'
 import Dashboard from './components/Dashboard.jsx'
 import Marquee from './components/Marquee.jsx'
 import useReveal from './hooks/useReveal.js'
-import { LanguageProvider } from './i18n/LanguageContext.jsx'
+import { LanguageProvider, useLang } from './i18n/LanguageContext.jsx'
 import { UIVariantProvider, useUIVariant } from './context/UIVariantContext.jsx'
 import './styles/app.css'
 import './styles/ui2.css'
@@ -23,7 +24,8 @@ import './styles/dashboard.css'
 
 function Site() {
   const { variant } = useUIVariant()
-  useReveal()
+  const { lang } = useLang()
+  useReveal([variant, lang])
 
   return (
     <div className={`app ui-${variant}`} id="top">
@@ -44,6 +46,7 @@ function Site() {
         <Testimonials />
       </main>
       <Footer />
+      <AuthorCredit />
     </div>
   )
 }

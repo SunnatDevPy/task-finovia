@@ -494,18 +494,24 @@
   pointer-events: none;
 }
 
-/* 3-chi testimonial to'liq kenglik (reference 2 ustun) */
-.ui-2 .testimonial-card:last-child:nth-child(odd) {
-  grid-column: 1 / -1;
-  max-width: calc(50% - 12px);
+/* 3-chi testimonial — 2 ustunli gridda bir xil */
+.ui-2 .testimonials__grid .testimonial-card:last-child {
+  grid-column: auto;
+  max-width: none;
+}
+
+.ui-2 .author-credit {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(108, 77, 255, 0.2);
+}
+
+.ui-2 .author-credit__by {
+  color: var(--accent);
 }
 
 @media (max-width: 768px) {
   .ui-2 .testimonials__grid {
     grid-template-columns: 1fr;
-  }
-  .ui-2 .testimonial-card:last-child:nth-child(odd) {
-    max-width: none;
   }
   .ui-2 .blog .section-title,
   .ui-2 .testimonials .section-title {

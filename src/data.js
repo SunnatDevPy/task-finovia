@@ -46,3 +46,9 @@ export const STATS = [
   { end: 360, prefix: '$', suffix: 'B+' },
   { end: 456, prefix: '', suffix: '+' },
 ]
+
+export const AUTHOR = {
+  name: 'Sunnat',
+  phone: '+998 93 105 05 15',
+  phoneHref: 'tel:+998931050515',
+}

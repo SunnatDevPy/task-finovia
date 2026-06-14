@@ -1,3 +1,4 @@
+import { AUTHOR } from '../data.js'
 import { useLang } from '../i18n/LanguageContext.jsx'
 
 export default function CTA() {
@@ -9,7 +10,7 @@ export default function CTA() {
           <span className="eyebrow">{t.cta.eyebrow}</span>
           <h2 className="section-title">{t.cta.title}</h2>
           <p>{t.cta.text}</p>
-          <a href="mailto:hello@finovia.com" className="btn btn-primary">
+          <a href={AUTHOR.phoneHref} className="btn btn-primary">
             {t.cta.button} <span className="arrow">↗</span>
           </a>
         </div>

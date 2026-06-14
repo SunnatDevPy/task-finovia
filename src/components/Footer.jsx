@@ -1,3 +1,4 @@
+import { AUTHOR } from '../data.js'
 import { useLang } from '../i18n/LanguageContext.jsx'
 
 export default function Footer() {
@@ -11,6 +12,10 @@ export default function Footer() {
             finovia<span>.</span>
           </a>
           <p>{t.footer.brand}</p>
+          <a href={AUTHOR.phoneHref} className="footer__author">
+            <strong>{t.footer.by}</strong>
+            <span>{AUTHOR.phone}</span>
+          </a>
         </div>
 
         <div className="footer__col">
@@ -34,16 +39,23 @@ export default function Footer() {
         <div className="footer__col">
           <h4>{t.footer.touchTitle}</h4>
           <ul>
-            <li>918 Wolter, Lampung</li>
-            <li>example@mail.com</li>
-            <li>+1 234 567 890</li>
-            <li>07.00 AM - 23.00 PM</li>
+            <li>Toshkent, O‘zbekiston</li>
+            <li>
+              <a href={`mailto:hello@${AUTHOR.name.toLowerCase()}.dev`}>hello@finovia.com</a>
+            </li>
+            <li>
+              <a href={AUTHOR.phoneHref}>{AUTHOR.phone}</a>
+            </li>
+            <li>09:00 — 22:00</li>
           </ul>
         </div>
       </div>
 
       <div className="container footer__bottom">
         <span>{t.footer.copyright}</span>
+        <a href={AUTHOR.phoneHref} className="footer__bottom-link">
+          {t.footer.by} · {AUTHOR.phone}
+        </a>
         <span>{t.footer.built}</span>
       </div>
     </footer>

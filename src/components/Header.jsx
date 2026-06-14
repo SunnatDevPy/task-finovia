@@ -17,76 +17,106 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [open])
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+
   return (
-    <header className={`header ${scrolled ? 'is-scrolled' : ''}`}>
-      <div className="container header__inner">
-        <div className="header__left">
-          <a href="#top" className="logo">
-            finovia<span>.</span>
-          </a>
-
-          <div className="ui-switch" role="group" aria-label="Design variant">
-            <span className={`ui-switch__thumb ui-switch__thumb--${variant}`} />
-            <button
-              className={`ui-switch__btn ${variant === '1' ? 'is-active' : ''}`}
-              onClick={() => setVariant('1')}
-            >
-              UI 1
-            </button>
-            <button
-              className={`ui-switch__btn ${variant === '2' ? 'is-active' : ''}`}
-              onClick={() => setVariant('2')}
-            >
-              UI 2
-            </button>
-            <button
-              className={`ui-switch__btn ${variant === '3' ? 'is-active' : ''}`}
-              onClick={() => setVariant('3')}
-            >
-              UI 3
-            </button>
-          </div>
-        </div>
-
-        <nav className={`nav ${open ? 'is-open' : ''}`}>
-          {t.nav.items.map((label, i) => (
-            <a key={NAV_HREFS[i]} href={NAV_HREFS[i]} onClick={() => setOpen(false)}>
-              {label}
+    <>
+      <header className={`header ${scrolled ? 'is-scrolled' : ''}`}>
+        <div className="container header__inner">
+          <div className="header__left">
+            <a href="#top" className="logo" onClick={() => setOpen(false)}>
+              finovia<span>.</span>
             </a>
-          ))}
-          <a href="#contact" className="btn btn-primary nav__cta" onClick={() => setOpen(false)}>
-            {t.nav.contact}
-          </a>
-        </nav>
 
-        <div className="header__right">
-          <div className="lang-switch" role="group" aria-label="Language">
-            {LANGS.map((l) => (
+            <div className="ui-switch" role="group" aria-label="Design variant">
+              <span className={`ui-switch__thumb ui-switch__thumb--${variant}`} />
               <button
-                key={l.code}
-                className={`lang-switch__btn ${lang === l.code ? 'is-active' : ''}`}
-                onClick={() => setLang(l.code)}
+                type="button"
+                className={`ui-switch__btn ${variant === '1' ? 'is-active' : ''}`}
+                onClick={() => setVariant('1')}
               >
-                {l.label}
+                UI 1
               </button>
-            ))}
+              <button
+                type="button"
+                className={`ui-switch__btn ${variant === '2' ? 'is-active' : ''}`}
+                onClick={() => setVariant('2')}
+              >
+                UI 2
+              </button>
+              <button
+                type="button"
+                className={`ui-switch__btn ${variant === '3' ? 'is-active' : ''}`}
+                onClick={() => setVariant('3')}
+              >
+                UI 3
+              </button>
+            </div>
           </div>
 
-          <a href="#contact" className="btn btn-primary header__cta">
-            {t.nav.contact}
-          </a>
+          <nav className={`nav ${open ? 'is-open' : ''}`} aria-label="Main">
+            {t.nav.items.map((label, i) => (
+              <a key={NAV_HREFS[i]} href={NAV_HREFS[i]} onClick={() => setOpen(false)}>
+                {label}
+              </a>
+            ))}
+            <a href="#contact" className="btn btn-primary nav__cta" onClick={() => setOpen(false)}>
+              {t.nav.contact}
+            </a>
+          </nav>
 
-          <button
-            className={`burger ${open ? 'is-open' : ''}`}
-            onClick={() => setOpen((v) => !v)}
-            aria-label="Menu"
-          >
-            <span />
-            <span />
-            <span />
-          </button>
+          <div className="header__right">
+            <div className="lang-switch" role="group" aria-label="Language">
+              {LANGS.map((l) => (
+                <button
+                  key={l.code}
+                  type="button"
+                  className={`lang-switch__btn ${lang === l.code ? 'is-active' : ''}`}
+                  onClick={() => setLang(l.code)}
+                >
+                  {l.label}
+                </button>
+              ))}
+            </div>
+
+            <a href="#contact" className="btn btn-primary header__cta">
+              {t.nav.contact}
+            </a>
+
+            <button
+              type="button"
+              className={`burger ${open ? 'is-open' : ''}`}
+              onClick={() => setOpen((v) => !v)}
+              aria-label="Menu"
+              aria-expanded={open}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+
+      <button
+        type="button"
+        className={`nav-backdrop ${open ? 'is-open' : ''}`}
+        aria-label="Close menu"
+        onClick={() => setOpen(false)}
+      />
+    </>
   )
 }

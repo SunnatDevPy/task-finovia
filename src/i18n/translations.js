@@ -137,13 +137,16 @@ export const translations = {
       vsLast: 'o‘tgan haftaga nisbatan',
     },
     footer: {
+      brand: 'O‘lchanadigan natijalar keltiradigan keng qamrovli raqamli marketing yechimlari.',
       menuTitle: 'Menyu',
       menu: ['Biz haqimizda', 'Xizmatlar', 'Portfolio', 'Blog', 'Mijozlar fikri'],
       supportTitle: 'Yordam',
       support: ['Aloqa', 'Yordam markazi', 'Savol-javob'],
       touchTitle: 'Bog‘lanish',
       copyright: 'Mualliflik huquqi © 2026 Finovia',
-      built: 'React bilan ishlangan · Demo loyiha',
+      built: 'React · Demo loyiha',
+      by: 'by Sunnat',
+      call: 'Qo‘ng‘iroq qiling',
     },
   },
 
@@ -287,6 +290,8 @@ export const translations = {
       touchTitle: 'Связаться',
       copyright: 'Авторское право © 2026 Finovia',
       built: 'Сделано на React · Демо-проект',
+      by: 'by Sunnat',
+      call: 'Позвонить',
     },
   },
 
@@ -430,6 +435,8 @@ export const translations = {
       touchTitle: 'Get In Touch',
       copyright: 'Copyright © 2026 Finovia',
       built: 'Built with React · Demo project',
+      by: 'by Sunnat',
+      call: 'Call now',
     },
   },
 }

@@ -144,6 +144,19 @@ button {
   transform: translate(3px, -3px);
 }
 
+.btn:focus-visible,
+.lang-switch__btn:focus-visible,
+.ui-switch__btn:focus-visible,
+.burger:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
 /* scroll reveal */
 .reveal {
   opacity: 0;

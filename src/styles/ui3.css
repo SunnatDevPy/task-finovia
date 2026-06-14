@@ -93,3 +93,18 @@
 .ui-3 .footer {
   background: var(--bg-soft);
 }
+
+.ui-3 .author-credit {
+  background: rgba(21, 22, 26, 0.92);
+  border-color: rgba(198, 244, 50, 0.25);
+}
+
+.ui-3 .author-credit:hover {
+  box-shadow: 0 22px 50px -18px rgba(198, 244, 50, 0.35);
+}
+
+.ui-3 .service-card:hover,
+.ui-3 .why-card:hover,
+.ui-3 .work-card:hover .work-card__img img {
+  box-shadow: 0 0 0 1px rgba(198, 244, 50, 0.2);
+}
