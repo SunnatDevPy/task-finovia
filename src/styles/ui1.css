@@ -17,28 +17,7 @@
   --radius: 22px;
 }
 
-/* Hero — chapga (Finovia asl uslubi) */
-.ui-1 .hero__inner {
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.ui-1 .hero__title {
-  margin: 0;
-  max-width: 14ch;
-}
-
-.ui-1 .hero__lead {
-  margin-left: 0;
-  margin-right: auto;
-}
-
-.ui-1 .hero__actions {
-  justify-content: flex-start;
-}
-
+/* Hero — chap tomonda matn, glow chapga (Finovia asl uslubi) */
 .ui-1 .hero__glow {
   left: -80px;
   transform: none;
@@ -46,14 +25,6 @@
 
 .ui-1 .eyebrow::before {
   display: block;
-}
-
-.ui-1 .hero__stats {
-  margin-top: 0;
-}
-
-.ui-1 .stat {
-  border-color: rgba(255, 255, 255, 0.1);
 }
 
 /* ===== UI 1 — UNIKAL ANIMATSIYA: tez, qat'iy sirpanish ===== */
@@ -141,12 +112,6 @@
   box-shadow: 0 24px 56px -32px rgba(198, 244, 50, 0.2);
 }
 
-.ui-1 .stat:hover {
-  transform: translateY(-6px);
-  border-color: var(--accent);
-  box-shadow: 0 0 30px -8px rgba(198, 244, 50, 0.3);
-}
-
 /* Footer — qora Finovia uslubi */
 .ui-1 .footer__top {
   background: #0a0b08;
@@ -180,18 +145,4 @@
 
 .ui-1 .work-card:hover .work-card__img img {
   filter: grayscale(0) contrast(1);
-}
-
-@media (max-width: 768px) {
-  .ui-1 .hero__inner {
-    align-items: center;
-    text-align: center;
-  }
-  .ui-1 .hero__actions {
-    justify-content: center;
-  }
-  .ui-1 .hero__lead {
-    margin-left: auto;
-    margin-right: auto;
-  }
 }

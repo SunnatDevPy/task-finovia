@@ -41,6 +41,9 @@ export const TESTIMONIAL_AVATARS = [
 export const ABOUT_IMAGE =
   'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80'
 
+export const HERO_IMAGE =
+  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1100&q=80'
+
 export const STATS = [
   { end: 99, prefix: '', suffix: '%' },
   { end: 360, prefix: '$', suffix: 'B+' },

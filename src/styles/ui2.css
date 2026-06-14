@@ -47,7 +47,7 @@
 
 /* ---- Hero: oq fon, purple aksent, silliq glow ---- */
 .ui-2 .hero {
-  padding: 200px 0 100px;
+  padding: 170px 0 90px;
   background: var(--bg);
 }
 
@@ -62,49 +62,8 @@
   height: 760px;
 }
 
-.ui-2 .hero__inner {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
 .ui-2 .hero__title {
-  margin: 0 auto;
-  max-width: 18ch;
-  font-size: clamp(2.8rem, 7.5vw, 5.8rem);
-}
-
-.ui-2 .hero__lead {
-  margin: 26px auto 36px;
-}
-
-.ui-2 .hero__actions {
-  justify-content: center;
-}
-
-.ui-2 .hero__stats {
-  margin-top: 0;
-}
-
-.ui-2 .hero__stats-wrap {
-  max-width: var(--maxw);
-}
-
-.ui-2 .stat {
-  text-align: center;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  box-shadow: 0 18px 40px -30px rgba(20, 22, 40, 0.5);
-  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, border-color 0.4s ease;
-}
-
-.ui-2 .stat:hover {
-  transform: translateY(-8px) scale(1.03);
-  border-color: var(--accent);
-  box-shadow: 0 28px 56px -30px rgba(108, 77, 255, 0.45);
+  color: #15151f;
 }
 
 /* ===== UI 2 — UNIKAL ANIMATSIYA: yumshoq, ozgina sakraydigan scale ===== */

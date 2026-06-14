@@ -47,22 +47,13 @@
   background: rgba(34, 211, 238, 0.06);
 }
 
-/* Hero — markaziy, grid fon */
+/* Hero — texno grid fon */
 .ui-3 .hero {
-  padding: 190px 0 90px;
-  text-align: center;
+  padding: 180px 0 90px;
   background:
     linear-gradient(rgba(34, 211, 238, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(34, 211, 238, 0.03) 1px, transparent 1px);
   background-size: 48px 48px;
-}
-
-.ui-3 .hero__inner {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
 }
 
 .ui-3 .hero__glow {
@@ -76,28 +67,8 @@
   color: transparent;
 }
 
-.ui-3 .hero__actions {
-  justify-content: center;
-}
-
-.ui-3 .hero__stats {
-  margin-top: 0;
-}
-
-.ui-3 .stat {
-  background: rgba(10, 16, 30, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(34, 211, 238, 0.22);
-  box-shadow: 0 16px 40px -28px rgba(0, 0, 0, 0.5);
-}
-
-.ui-3 .stat:hover {
-  border-color: var(--accent);
-  box-shadow: 0 0 32px -8px rgba(34, 211, 238, 0.35);
-}
-
 .ui-3 .stat__value {
-  color: var(--accent);
+  color: var(--text);
 }
 
 /* ===== UI 3 — UNIKAL ANIMATSIYA: blur + pastdan, texno uslub ===== */
@@ -169,12 +140,6 @@
   transform: translateY(-6px);
   border-color: var(--accent);
   box-shadow: 0 0 34px -10px rgba(34, 211, 238, 0.35);
-}
-
-.ui-3 .stat:hover {
-  transform: translateY(-6px);
-  border-color: var(--accent);
-  box-shadow: 0 0 34px -8px rgba(34, 211, 238, 0.4);
 }
 
 /* Marquee */
