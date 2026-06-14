@@ -1,12 +1,13 @@
 import { PRICING_META } from '../data.js'
 import { useLang } from '../i18n/LanguageContext.jsx'
+import { rv } from '../utils/reveal.js'
 
 export default function Pricing() {
   const { t } = useLang()
   return (
     <section className="section pricing" id="pricing">
       <div className="container">
-        <div className="section-head reveal">
+        <div className="section-head" {...rv('right')}>
           <span className="eyebrow">{t.pricing.eyebrow}</span>
           <h2 className="section-title">{t.pricing.title}</h2>
         </div>
@@ -16,9 +17,9 @@ export default function Pricing() {
             const meta = PRICING_META[i]
             return (
               <article
-                className={`price-card reveal ${meta.featured ? 'is-featured' : ''}`}
+                className={`price-card ${meta.featured ? 'is-featured' : ''}`}
                 key={i}
-                style={{ transitionDelay: `${i * 0.08}s` }}
+                {...rv(i === 0 ? 'left' : 'right', i * 0.1)}
               >
                 {meta.featured && <span className="price-card__badge">{t.pricing.badge}</span>}
                 <h3 className="price-card__name">{plan.name}</h3>
@@ -42,7 +43,7 @@ export default function Pricing() {
             )
           })}
         </div>
-        <p className="pricing__note">{t.pricing.note}</p>
+        <p className="pricing__note" {...rv('up', 0.15)}>{t.pricing.note}</p>
       </div>
     </section>
   )

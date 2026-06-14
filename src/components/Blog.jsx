@@ -1,6 +1,9 @@
 import { BLOG_IMAGES } from '../data.js'
 import { useLang } from '../i18n/LanguageContext.jsx'
 import { useUIVariant } from '../context/UIVariantContext.jsx'
+import { rv } from '../utils/reveal.js'
+
+const CARD_DIRS = ['left', 'up', 'right']
 
 export default function Blog() {
   const { t } = useLang()
@@ -10,7 +13,7 @@ export default function Blog() {
   return (
     <section className="section blog" id="blog">
       <div className="container">
-        <div className="work__head reveal">
+        <div className="work__head" {...rv('down')}>
           <div>
             <span className="eyebrow">
               {isUi2 && <span className="eyebrow__hash">#</span>}
@@ -25,7 +28,7 @@ export default function Blog() {
 
         <div className="blog__grid">
           {t.blog.items.map((post, i) => (
-            <article className="blog-card reveal" key={i} style={{ transitionDelay: `${i * 0.07}s` }}>
+            <article className="blog-card" key={i} {...rv(CARD_DIRS[i], i * 0.1)}>
               <div className="blog-card__img">
                 <img src={BLOG_IMAGES[i]} alt={post.title} loading="lazy" />
                 {!isUi2 && <span className="blog-card__tag">{post.tag}</span>}

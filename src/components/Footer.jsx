@@ -1,12 +1,13 @@
 import { AUTHOR } from '../data.js'
 import { useLang } from '../i18n/LanguageContext.jsx'
+import { rv } from '../utils/reveal.js'
 
 export default function Footer() {
   const { t } = useLang()
   const menuHrefs = ['#about', '#services', '#work', '#blog', '#testimonials']
   return (
     <footer className="footer">
-      <div className="container footer__inner">
+      <div className="container footer__inner" {...rv('up')}>
         <div className="footer__brand">
           <a href="#top" className="logo">
             finovia<span>.</span>

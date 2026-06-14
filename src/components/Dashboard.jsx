@@ -3,6 +3,7 @@ import CountUp from './CountUp.jsx'
 import useDashboardData from '../hooks/useDashboardData.js'
 import { useLang } from '../i18n/LanguageContext.jsx'
 import { useUIVariant } from '../context/UIVariantContext.jsx'
+import { rv } from '../utils/reveal.js'
 
 function LineChart({ data, labels, variant }) {
   const { path, area, points } = useMemo(() => {
@@ -96,7 +97,7 @@ export default function Dashboard() {
   return (
     <section className={`section dashboard dashboard--${skin}`} id="dashboard">
       <div className="container">
-        <div className="dashboard__head reveal">
+        <div className="dashboard__head" {...rv('down')}>
           <div>
             <span className="eyebrow">
               {skin === 'light' && <span className="eyebrow__hash">#</span>}
@@ -111,9 +112,13 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="dashboard__kpis reveal">
+        <div className="dashboard__kpis">
           {kpiMeta.map((k, i) => (
-            <article className="dash-kpi" key={k.id} style={{ transitionDelay: `${i * 0.06}s` }}>
+            <article
+              className="dash-kpi"
+              key={k.id}
+              {...rv(['left', 'up', 'right', 'scale'][i], i * 0.06)}
+            >
               <span className="dash-kpi__label">{k.label}</span>
               <span className="dash-kpi__value">
                 <CountUp end={k.value} prefix={k.prefix || ''} suffix={k.suffix || ''} />
@@ -125,8 +130,8 @@ export default function Dashboard() {
           ))}
         </div>
 
-        <div className="dashboard__grid reveal">
-          <article className="dash-card dash-card--wide">
+        <div className="dashboard__grid">
+          <article className="dash-card dash-card--wide" {...rv('left', 0.05)}>
             <h3>{d.charts.weekly}</h3>
             <div className="chart-bars">
               {data.bars.map((h, i) => (
@@ -138,12 +143,12 @@ export default function Dashboard() {
             </div>
           </article>
 
-          <article className="dash-card">
+          <article className="dash-card" {...rv('right', 0.1)}>
             <h3>{d.charts.growth}</h3>
             <LineChart data={data.line} labels={data.lineLabels} variant={skin} />
           </article>
 
-          <article className="dash-card">
+          <article className="dash-card" {...rv('up', 0.15)}>
             <h3>{d.charts.sources}</h3>
             <DonutChart
               segments={data.donut}
@@ -153,7 +158,7 @@ export default function Dashboard() {
             />
           </article>
 
-          <article className="dash-card">
+          <article className="dash-card" {...rv('scale', 0.2)}>
             <h3>{d.charts.score}</h3>
             <div className="chart-gauge">
               <svg viewBox="0 0 120 120" aria-hidden>
@@ -172,7 +177,7 @@ export default function Dashboard() {
             </div>
           </article>
 
-          <article className="dash-card dash-card--wide">
+          <article className="dash-card dash-card--wide" {...rv('up', 0.25)}>
             <h3>{d.charts.live}</h3>
             <ul className="dash-activity">
               {data.activities.map((a) => (

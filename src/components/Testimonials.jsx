@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { TESTIMONIAL_AVATARS, TESTIMONIAL_NAMES } from '../data.js'
 import { useLang } from '../i18n/LanguageContext.jsx'
 import { useUIVariant } from '../context/UIVariantContext.jsx'
+import { rv } from '../utils/reveal.js'
 
 export default function Testimonials() {
   const { t } = useLang()
@@ -9,6 +10,7 @@ export default function Testimonials() {
   const isUi2 = variant === '2'
   const [active, setActive] = useState(0)
   const items = t.testimonials.items
+  const cardDirs = ['left', 'right', 'up']
 
   useEffect(() => {
     if (isUi2) return
@@ -23,7 +25,7 @@ export default function Testimonials() {
       <div className="container">
         {isUi2 ? (
           <>
-            <div className="work__head reveal">
+            <div className="work__head" {...rv('up')}>
               <div>
                 <span className="eyebrow">
                   <span className="eyebrow__hash">#</span>
@@ -36,9 +38,13 @@ export default function Testimonials() {
               </a>
             </div>
 
-            <div className="testimonials__grid reveal">
+            <div className="testimonials__grid">
               {items.map((item, i) => (
-                <article className="testimonial-card" key={i} style={{ transitionDelay: `${i * 0.08}s` }}>
+                <article
+                  className="testimonial-card"
+                  key={i}
+                  {...rv(cardDirs[i], i * 0.1)}
+                >
                   <div className="testimonial-card__stars" aria-label="5 stars">
                     ★★★★★
                   </div>
@@ -59,12 +65,12 @@ export default function Testimonials() {
           </>
         ) : (
           <>
-            <div className="section-head reveal">
+            <div className="section-head" {...rv('left')}>
               <span className="eyebrow">{t.testimonials.eyebrow}</span>
               <h2 className="section-title">{t.testimonials.title}</h2>
             </div>
 
-            <div className="testimonials__slider reveal">
+            <div className="testimonials__slider" {...rv('right', 0.1)}>
               {items.map((item, i) => (
                 <blockquote className={`testimonial ${i === active ? 'is-active' : ''}`} key={i}>
                   <p className="testimonial__text">"{item.text}"</p>
